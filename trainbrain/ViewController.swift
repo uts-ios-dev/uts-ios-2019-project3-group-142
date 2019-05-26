@@ -12,6 +12,9 @@ class ViewController: UIViewController {
     // Properties
     var stations = [Station]()
     let searchController = UISearchController(searchResultsController: nil)
+    // UI components
+    @IBOutlet weak var stationSearchField: StationSearchField!
+    @IBOutlet weak var btnNext: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,5 +61,7 @@ class ViewController: UIViewController {
     }
 
     
+    @IBAction func searchTextField(_ sender: StationSearchField) {
+    }
 }
 
