@@ -10,3 +10,4 @@ trainbrain helps make your train journey easier. The app lets you know which car
 
 ## Additional Resources
 - [Logo icon](https://icons8.com/icon/14748/brain)
+- .gitignore based off of [GitHub Swift Master .gitignore](https://github.com/github/gitignore/blob/master/Swift.gitignore)
