@@ -12,6 +12,7 @@ class StationSearchField: UITextField, UITableViewDelegate, UITableViewDataSourc
     var dataList : [Station] = [Station]()
     var resultsList : [Station] = [Station]()
     var tableView : UITableView?
+    var selectedStation : Station?
     
     override open func willMove(toWindow newWindow: UIWindow?) {
         super.willMove(toWindow: newWindow)
@@ -142,6 +143,7 @@ class StationSearchField: UITextField, UITableViewDelegate, UITableViewDataSourc
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedStation = resultsList[indexPath.row]
         self.text = resultsList[indexPath.row].name
         tableView.isHidden = true
         self.endEditing(true)

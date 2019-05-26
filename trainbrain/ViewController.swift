@@ -8,13 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    // Properties
-    var stations = [Station]()
-    let searchController = UISearchController(searchResultsController: nil)
+class ViewController : UIViewController {
     // UI components
-    @IBOutlet weak var stationSearchField: StationSearchField!
-    @IBOutlet weak var btnNext: UIButton!
+    @IBOutlet weak var stationSearchField : StationSearchField!
+    @IBOutlet weak var btnNext : UIButton!
+    @IBOutlet weak var labelStationCheck: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +20,11 @@ class ViewController: UIViewController {
 
     
     @IBAction func searchTextField(_ sender: StationSearchField) {
+    }
+    
+    @IBAction func onClick(_ sender: Any) {
+        print(stationSearchField.selectedStation?.name ?? "<station>")
+//        labelStationCheck.text = (stationSearchField.selectedStation?.name ?? "<station>") + ", huh?"
     }
 }
 
