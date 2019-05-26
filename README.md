@@ -1,3 +1,12 @@
-# Project 3
+# trainbrain
 
-Populate this README.md file with relevant information about your project.
+trainbrain helps make your train journey easier. The app lets you know which carriage you should aim to grab closest to exit type you want at your destination. The aim is to help those who have limited mobility discover the quickest route for them from train to elevator/escalator/ramp/other exit and to help all passengers have more familiarity with less frequented or new stations.
+
+## Contributors
+
+- Imogen Thomson - 11697998
+- Yat Ho Kwok - 12879779
+- Sidney Cremer - 12587818
+
+## Additional Resources
+- [Logo icon](https://icons8.com/icon/14748/brain)
