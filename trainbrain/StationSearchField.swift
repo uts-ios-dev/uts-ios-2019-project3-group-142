@@ -9,7 +9,8 @@
 import UIKit
 
 class StationSearchField: UITextField, UITableViewDelegate, UITableViewDataSource {
-    var dataList : [String] = []
+    var dataList : [Station] = [Station]()
+    var resultsList : [Station] = [Station]()
     var tableView : UITableView?
     
     override open func willMove(toWindow newWindow: UIWindow?) {
@@ -41,6 +42,7 @@ class StationSearchField: UITextField, UITableViewDelegate, UITableViewDataSourc
             self.window?.addSubview(tableView)
         } else {
             // Create the tableView
+            addData()
             tableView = UITableView(frame: CGRect.zero)
         }
         
@@ -80,7 +82,48 @@ class StationSearchField: UITextField, UITableViewDelegate, UITableViewDataSourc
     }
     
     func addData() {
-        dataList.append(self.text!)
+        // TODO: Move and read from file
+        dataList.append(
+            Station(name: "Rockdale", platforms: [
+                Platform(number: 2, exits: [
+                    Exit(type: .stairs, carriageNumber: 5, doorNumber: 2),
+                    Exit(type: .elevator, carriageNumber: 7, doorNumber: 1)
+                ]),
+                Platform(number: 3, exits: [
+                    Exit(type: .stairs, carriageNumber: 3, doorNumber: 2),
+                    Exit(type: .elevator, carriageNumber: 2, doorNumber: 2)
+                ]),
+                Platform(number: 4, exits: [
+                    Exit(type: .stairs, carriageNumber: 5, doorNumber: 2),
+                    Exit(type: .elevator, carriageNumber: 7, doorNumber: 1)
+                ]),
+                Platform(number: 5, exits: [
+                    Exit(type: .stairs, carriageNumber: 3, doorNumber: 2),
+                    Exit(type: .elevator, carriageNumber: 2, doorNumber: 2)
+                ])
+            ])
+        )
+        
+        dataList.append(
+            Station(name: "Kogarah", platforms: [
+                Platform(number: 1, exits: [
+                    Exit(type: .stairs, carriageNumber: 8, doorNumber: 2),
+                    Exit(type: .elevator, carriageNumber: 8, doorNumber: 2)
+                ]),
+                Platform(number: 2, exits: [
+                    Exit(type: .stairs, carriageNumber: 2, doorNumber: 1),
+                    Exit(type: .elevator, carriageNumber: 1, doorNumber: 1)
+                ]),
+                Platform(number: 3, exits: [
+                    Exit(type: .stairs, carriageNumber: 7, doorNumber: 2),
+                    Exit(type: .elevator, carriageNumber: 8, doorNumber: 2)
+                ]),
+                Platform(number: 4, exits: [
+                    Exit(type: .stairs, carriageNumber: 1, doorNumber: 2),
+                    Exit(type: .elevator, carriageNumber: 1, doorNumber: 1)
+                ])
+            ])
+        )
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -88,26 +131,42 @@ class StationSearchField: UITextField, UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataList.count
+        return resultsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StationSearchFieldCell", for: indexPath) as UITableViewCell
         cell.backgroundColor = UIColor.clear
-        cell.textLabel?.text = dataList[indexPath.row]
+        cell.textLabel?.text = resultsList[indexPath.row].name
         return cell
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.text = dataList[indexPath.row]
+        self.text = resultsList[indexPath.row].name
         tableView.isHidden = true
         self.endEditing(true)
     }
     
-    @objc open func textFieldDidChange(){
-        addData()
-        updateSearchTableView()
+    fileprivate func filter() {
+        resultsList = []
         
+        for i in 0 ..< dataList.count {
+            let item = dataList[i]
+            
+            let filterRange = (item.name as NSString).range(of: text!, options: .caseInsensitive)
+            
+            if filterRange.location != NSNotFound {
+                resultsList.append(item)
+            }
+        }
+        
+        tableView?.reloadData()
+    }
+    
+    @objc open func textFieldDidChange(){
+        filter()
+        updateSearchTableView()
+        tableView?.isHidden = false
     }
     
     @objc open func textFieldDidBeginEditing() {
