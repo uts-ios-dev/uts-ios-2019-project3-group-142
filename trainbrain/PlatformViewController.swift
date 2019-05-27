@@ -8,14 +8,63 @@
 
 import UIKit
 
-class PlatformViewController : UIViewController {
+class PlatformViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     // UI components
     @IBOutlet weak var labelStationCheck : UILabel!
+    @IBOutlet weak var pickerPlatform: UIPickerView!
     // Properties
     var station : Station!
+    var selectedPlatform : Platform?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         labelStationCheck.text = "\(station.name), huh?"
+        
+        self.pickerPlatform.delegate = self
+        self.pickerPlatform.dataSource = self
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return station.platforms.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var labelPlatform : UILabel
+        
+        if let v = view as? UILabel {
+            labelPlatform = v
+        } else {
+            labelPlatform = UILabel()
+        }
+        
+        labelPlatform.textColor = UIColor.white
+        labelPlatform.font = UIFont(name: "AvenirNext-Bold", size: 24.0)
+        labelPlatform.textAlignment = .center
+        labelPlatform.text = "Platform \(station.platforms[row].number)"
+        
+        return labelPlatform
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedPlatform = station.platforms[row];
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let exitViewController = segue.destination as? ExitViewController
+            else {
+                return
+            }
+        
+        exitViewController.station = station
+        exitViewController.platform = selectedPlatform
     }
 }

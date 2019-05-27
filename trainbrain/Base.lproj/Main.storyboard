@@ -138,16 +138,17 @@
                     </view>
                     <connections>
                         <outlet property="labelStationCheck" destination="v2v-DZ-tWl" id="L2I-CR-xNN"/>
+                        <outlet property="pickerPlatform" destination="axV-I6-AXY" id="wrd-Bf-hWH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qIi-99-Oxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="931.88405797101461" y="105.80357142857143"/>
         </scene>
-        <!--View Controller-->
+        <!--Exit View Controller-->
         <scene sceneID="uN6-aH-lgD">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="CC0-Zh-L15" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="CC0-Zh-L15" customClass="ExitViewController" customModule="trainbrain" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uqf-5n-oon">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,6 +201,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wIg-EP-01b"/>
                     </view>
+                    <connections>
+                        <outlet property="labelPlatformCheck" destination="xut-hA-wkk" id="tzV-rB-myu"/>
+                        <outlet property="pickerExit" destination="QJX-1X-MNQ" id="AGg-Oa-NXm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aNw-Sf-OBw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

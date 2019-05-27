@@ -26,7 +26,7 @@ class ViewController : UIViewController {
             let station = stationSearchField.selectedStation
             else {
                 return
-        }
+            }
         platformViewController.station = station
     }
 }

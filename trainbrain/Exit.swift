@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ExitType {
+enum ExitType : String {
     case elevator
     case escalator
     case gate // For platforms with exits level to street

@@ -13,6 +13,7 @@
 		042BDD77229A1776000BB80E /* TrainBrainTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042BDD76229A1776000BB80E /* TrainBrainTheme.swift */; };
 		042BDD79229ABC73000BB80E /* StationSearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042BDD78229ABC73000BB80E /* StationSearchField.swift */; };
 		04922382229B8FAB00D3CBA6 /* PlatformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04922381229B8FAB00D3CBA6 /* PlatformViewController.swift */; };
+		04922384229BA00600D3CBA6 /* ExitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04922383229BA00600D3CBA6 /* ExitViewController.swift */; };
 		FC50D02122897CC5006E6BC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC50D02022897CC5006E6BC8 /* AppDelegate.swift */; };
 		FC50D02322897CC5006E6BC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC50D02222897CC5006E6BC8 /* ViewController.swift */; };
 		FC50D02622897CC5006E6BC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC50D02422897CC5006E6BC8 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		042BDD76229A1776000BB80E /* TrainBrainTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainBrainTheme.swift; sourceTree = "<group>"; };
 		042BDD78229ABC73000BB80E /* StationSearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSearchField.swift; sourceTree = "<group>"; };
 		04922381229B8FAB00D3CBA6 /* PlatformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformViewController.swift; sourceTree = "<group>"; };
+		04922383229BA00600D3CBA6 /* ExitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitViewController.swift; sourceTree = "<group>"; };
 		FC50D01D22897CC5006E6BC8 /* trainbrain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trainbrain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC50D02022897CC5006E6BC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC50D02222897CC5006E6BC8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				042BDD76229A1776000BB80E /* TrainBrainTheme.swift */,
 				042BDD78229ABC73000BB80E /* StationSearchField.swift */,
 				04922381229B8FAB00D3CBA6 /* PlatformViewController.swift */,
+				04922383229BA00600D3CBA6 /* ExitViewController.swift */,
 			);
 			path = trainbrain;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				042BDD77229A1776000BB80E /* TrainBrainTheme.swift in Sources */,
 				FC50D02122897CC5006E6BC8 /* AppDelegate.swift in Sources */,
 				042BDD73229A166A000BB80E /* Exit.swift in Sources */,
+				04922384229BA00600D3CBA6 /* ExitViewController.swift in Sources */,
 				042BDD79229ABC73000BB80E /* StationSearchField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
