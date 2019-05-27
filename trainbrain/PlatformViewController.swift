@@ -19,6 +19,7 @@ class PlatformViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        selectedPlatform = station.platforms[0]
         labelStationCheck.text = "\(station.name), huh?"
         
         self.pickerPlatform.delegate = self

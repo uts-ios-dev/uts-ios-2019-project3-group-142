@@ -59,7 +59,9 @@ class ExitViewController : UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     func getAvailableExits() {
         for exit in platform.exits {
-            availableExits.append(exit.type.rawValue)
+            if (!availableExits.contains(exit.type.rawValue)) {
+                availableExits.append(exit.type.rawValue)
+            }
         }
     }
 }
