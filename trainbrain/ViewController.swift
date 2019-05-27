@@ -12,7 +12,6 @@ class ViewController : UIViewController {
     // UI components
     @IBOutlet weak var stationSearchField : StationSearchField!
     @IBOutlet weak var btnNext : UIButton!
-    @IBOutlet weak var labelStationCheck: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +21,13 @@ class ViewController : UIViewController {
     @IBAction func searchTextField(_ sender: StationSearchField) {
     }
     
-    @IBAction func onClick(_ sender: Any) {
-        print(stationSearchField.selectedStation?.name ?? "<station>")
-//        labelStationCheck.text = (stationSearchField.selectedStation?.name ?? "<station>") + ", huh?"
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let platformViewController = segue.destination as? PlatformViewController,
+            let station = stationSearchField.selectedStation
+            else {
+                return
+        }
+        platformViewController.station = station
     }
 }
 

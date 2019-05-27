@@ -34,8 +34,7 @@
                                     <color key="titleColor" red="1" green="0.48627450979999998" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="onClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nmO-7w-HIR"/>
-                                    <segue destination="hon-cX-fnM" kind="show" id="yMa-4h-RDa"/>
+                                    <segue destination="hon-cX-fnM" kind="show" id="zFW-41-69R"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where are you headed?" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="z1M-Pu-cDC">
@@ -82,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="205.79710144927537" y="105.80357142857143"/>
         </scene>
-        <!--View Controller-->
+        <!--Platform View Controller-->
         <scene sceneID="Imn-1Y-U1F">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="hon-cX-fnM" customClass="ViewController" customModule="trainbrain" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="hon-cX-fnM" customClass="PlatformViewController" customModule="trainbrain" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LGd-Yj-BEG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
