@@ -21,6 +21,9 @@ class ViewController : UIViewController {
     @IBAction func searchTextField(_ sender: StationSearchField) {
     }
     
+    @IBAction func onBtnNextPressed(_ sender: Any) {
+        
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let platformViewController = segue.destination as? PlatformViewController,
             let station = stationSearchField.selectedStation
