@@ -22,7 +22,9 @@ class ViewController : UIViewController {
     }
     
     @IBAction func onBtnNextPressed(_ sender: Any) {
-        
+        if (stationSearchField.selectedStation == nil) {
+            
+        }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let platformViewController = segue.destination as? PlatformViewController,
