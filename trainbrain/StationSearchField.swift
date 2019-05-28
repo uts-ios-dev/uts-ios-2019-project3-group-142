@@ -142,6 +142,28 @@ class StationSearchField: UITextField, UITableViewDelegate, UITableViewDataSourc
                 ])
             ])
         )
+        dataList.append(
+            Station(name: "Summer Hill", platforms: [
+                Platform(number: 1, exits: [
+                    Exit(type: .stairs, carriageNumber: 1, doorNumber: 2)
+                    ]),
+                Platform(number: 2, exits: [
+                    Exit(type: .stairs, carriageNumber: 8, doorNumber: 2)
+                    ])
+                ])
+        )
+        dataList.append(
+            Station(name: "Newtown", platforms: [
+                Platform(number: 1, exits: [
+                    Exit(type: .stairs, carriageNumber: 3, doorNumber: 1),
+                    Exit(type: .elevator, carriageNumber: 4, doorNumber: 1)
+                    ]),
+                Platform(number: 2, exits: [
+                    Exit(type: .stairs, carriageNumber: 4, doorNumber: 1),
+                    Exit(type: .elevator, carriageNumber: 3, doorNumber: 1)
+                    ])
+                ])
+        )
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
