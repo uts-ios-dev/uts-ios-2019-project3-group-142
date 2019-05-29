@@ -35,6 +35,16 @@ class ViewController : UIViewController {
         platformViewController.station = station
     }
     
+    
+    @IBAction func onStationSearchFieldChanged(_ sender: Any) {
+        if (stationSearchField.selectedStation == nil) {
+            btnNext.isEnabled = false
+            btnNext.backgroundColor = UIColor.lightText
+        } else {
+            btnNext.isEnabled = true
+            btnNext.backgroundColor = UIColor.white
+        }
+    }
     @IBAction func unwind(_ sender: UIStoryboardSegue) {}
 }
 
