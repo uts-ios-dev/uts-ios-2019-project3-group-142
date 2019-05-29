@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ExitEntity" representedClassName="ExitEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="carriageNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="doorNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="platform" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlatformEntity" inverseName="hasExits" inverseEntity="PlatformEntity" syncable="YES"/>
+    </entity>
+    <entity name="PlatformEntity" representedClassName="PlatformEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="exits" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="hasExits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExitEntity" inverseName="platform" inverseEntity="ExitEntity" syncable="YES"/>
+        <relationship name="station" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StationEntity" inverseName="hasPlatforms" inverseEntity="StationEntity" syncable="YES"/>
+    </entity>
+    <entity name="StationEntity" representedClassName="StationEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="platforms" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="hasPlatforms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlatformEntity" inverseName="station" inverseEntity="PlatformEntity" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="PlatformEntity" positionX="35.71875" positionY="59.48828125" width="128" height="103"/>
+        <element name="ExitEntity" positionX="74.5859375" positionY="370.28125" width="128" height="103"/>
+        <element name="StationEntity" positionX="-156.703125" positionY="-134.796875" width="128" height="90"/>
+    </elements>
+</model>
