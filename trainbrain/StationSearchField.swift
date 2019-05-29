@@ -205,6 +205,7 @@ class StationSearchField: UITextField, UITableViewDelegate, UITableViewDataSourc
     }
     
     @objc open func textFieldDidChange(){
+        selectedStation = nil
         filter()
         updateSearchTableView()
         tableView?.isHidden = false
