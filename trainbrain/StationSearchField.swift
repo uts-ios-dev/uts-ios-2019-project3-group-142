@@ -70,8 +70,6 @@ class StationSearchField: UITextField, UITableViewDelegate, UITableViewDataSourc
             
             tableView.layer.masksToBounds = true
             tableView.separatorInset = UIEdgeInsets.zero
-            tableView.layer.cornerRadius = 5.0
-            tableView.separatorColor = UIColor.lightGray
             tableView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
             
             if self.isFirstResponder {
@@ -135,7 +133,8 @@ class StationSearchField: UITextField, UITableViewDelegate, UITableViewDataSourc
                     Exit(type: .stairs, carriageNumber: 5, doorNumber: 2)
                 ]),
                 Platform(number: 3, exits: [
-                    Exit(type: .stairs, carriageNumber: 3, doorNumber: 1)
+                    Exit(type: .stairs, carriageNumber: 3, doorNumber: 1),
+                    Exit(type: .stairs, carriageNumber: 5, doorNumber: 2)
                 ]),
                 Platform(number: 4, exits: [
                     Exit(type: .stairs, carriageNumber: 5, doorNumber: 2)
@@ -178,7 +177,12 @@ class StationSearchField: UITextField, UITableViewDelegate, UITableViewDataSourc
         let cell = tableView.dequeueReusableCell(withIdentifier: "StationSearchFieldCell", for: indexPath) as UITableViewCell
         cell.backgroundColor = UIColor.clear
         cell.textLabel?.text = resultsList[indexPath.row].name
+        cell.textLabel?.font = UIFont(name: "AvenirNext-Bold", size: 24.0)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 48.0
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
