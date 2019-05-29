@@ -52,6 +52,7 @@
                                 <connections>
                                     <action selector="onStationSearchFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="6g8-Kp-mhc"/>
                                     <action selector="onStationSearchFieldChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="m8V-65-o7b"/>
+                                    <action selector="onStationSearchFieldChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="mMx-SH-FtC"/>
                                 </connections>
                             </textField>
                         </subviews>

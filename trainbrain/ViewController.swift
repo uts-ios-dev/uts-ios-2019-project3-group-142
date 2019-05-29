@@ -15,17 +15,15 @@ class ViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tapGesture)
     }
 
-    
-    @IBAction func searchTextField(_ sender: StationSearchField) {
+    @objc func dismissKeyboard() {
+        stationSearchField.resignFirstResponder()
     }
     
-    @IBAction func onBtnNextPressed(_ sender: Any) {
-        if (stationSearchField.selectedStation == nil) {
-            
-        }
-    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let platformViewController = segue.destination as? PlatformViewController,
             let station = stationSearchField.selectedStation
