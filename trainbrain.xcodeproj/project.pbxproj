@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04044A2922A3EB6800207391 /* TrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04044A2822A3EB6800207391 /* TrainViewController.swift */; };
 		042BDD71229A15D3000BB80E /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042BDD70229A15D3000BB80E /* Station.swift */; };
 		042BDD73229A166A000BB80E /* Exit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042BDD72229A166A000BB80E /* Exit.swift */; };
 		042BDD75229A16B1000BB80E /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042BDD74229A16B1000BB80E /* Platform.swift */; };
 		042BDD77229A1776000BB80E /* TrainBrainTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042BDD76229A1776000BB80E /* TrainBrainTheme.swift */; };
 		042BDD79229ABC73000BB80E /* StationSearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042BDD78229ABC73000BB80E /* StationSearchField.swift */; };
+		044F206222A3F4500014B52C /* TrainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F206122A3F4500014B52C /* TrainTableView.swift */; };
 		04922382229B8FAB00D3CBA6 /* PlatformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04922381229B8FAB00D3CBA6 /* PlatformViewController.swift */; };
 		04922384229BA00600D3CBA6 /* ExitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04922383229BA00600D3CBA6 /* ExitViewController.swift */; };
 		FC50D02122897CC5006E6BC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC50D02022897CC5006E6BC8 /* AppDelegate.swift */; };
@@ -22,11 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04044A2822A3EB6800207391 /* TrainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainViewController.swift; sourceTree = "<group>"; };
 		042BDD70229A15D3000BB80E /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		042BDD72229A166A000BB80E /* Exit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exit.swift; sourceTree = "<group>"; };
 		042BDD74229A16B1000BB80E /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		042BDD76229A1776000BB80E /* TrainBrainTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainBrainTheme.swift; sourceTree = "<group>"; };
 		042BDD78229ABC73000BB80E /* StationSearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSearchField.swift; sourceTree = "<group>"; };
+		044F206122A3F4500014B52C /* TrainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainTableView.swift; sourceTree = "<group>"; };
 		04922381229B8FAB00D3CBA6 /* PlatformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformViewController.swift; sourceTree = "<group>"; };
 		04922383229BA00600D3CBA6 /* ExitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitViewController.swift; sourceTree = "<group>"; };
 		FC50D01D22897CC5006E6BC8 /* trainbrain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trainbrain.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +85,8 @@
 				042BDD78229ABC73000BB80E /* StationSearchField.swift */,
 				04922381229B8FAB00D3CBA6 /* PlatformViewController.swift */,
 				04922383229BA00600D3CBA6 /* ExitViewController.swift */,
+				04044A2822A3EB6800207391 /* TrainViewController.swift */,
+				044F206122A3F4500014B52C /* TrainTableView.swift */,
 			);
 			path = trainbrain;
 			sourceTree = "<group>";
@@ -158,11 +164,13 @@
 			files = (
 				042BDD75229A16B1000BB80E /* Platform.swift in Sources */,
 				FC50D02322897CC5006E6BC8 /* ViewController.swift in Sources */,
+				044F206222A3F4500014B52C /* TrainTableView.swift in Sources */,
 				042BDD71229A15D3000BB80E /* Station.swift in Sources */,
 				04922382229B8FAB00D3CBA6 /* PlatformViewController.swift in Sources */,
 				042BDD77229A1776000BB80E /* TrainBrainTheme.swift in Sources */,
 				FC50D02122897CC5006E6BC8 /* AppDelegate.swift in Sources */,
 				042BDD73229A166A000BB80E /* Exit.swift in Sources */,
+				04044A2922A3EB6800207391 /* TrainViewController.swift in Sources */,
 				04922384229BA00600D3CBA6 /* ExitViewController.swift in Sources */,
 				042BDD79229ABC73000BB80E /* StationSearchField.swift in Sources */,
 			);

@@ -70,8 +70,7 @@ class StationSearchField: UITextField, UITableViewDelegate, UITableViewDataSourc
             
             tableView.layer.masksToBounds = true
             tableView.separatorInset = UIEdgeInsets.zero
-            tableView.layer.cornerRadius = 5.0
-            tableView.separatorColor = UIColor.lightGray
+            tableView.separatorColor = UIColor.clear
             tableView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
             
             if self.isFirstResponder {
@@ -174,10 +173,15 @@ class StationSearchField: UITextField, UITableViewDelegate, UITableViewDataSourc
         return resultsList.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 48.0
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StationSearchFieldCell", for: indexPath) as UITableViewCell
         cell.backgroundColor = UIColor.clear
         cell.textLabel?.text = resultsList[indexPath.row].name
+        cell.textLabel?.font = UIFont(name: "AvenirNext-Bold", size: 24.0)
         return cell
     }
     

@@ -15,7 +15,8 @@ class ExitViewController : UIViewController, UIPickerViewDelegate, UIPickerViewD
     // Properties
     var station : Station!
     var platform : Platform!
-    var availableExits : [String] = [String]()
+    var availableExits : [ExitType] = [ExitType]()
+    var selectedExitType : ExitType!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,11 @@ class ExitViewController : UIViewController, UIPickerViewDelegate, UIPickerViewD
         return 1
     }
     
+    // Change the height of the picker view row to be more inline with style
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 48.0
+    }
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return availableExits.count
     }
@@ -49,19 +55,36 @@ class ExitViewController : UIViewController, UIPickerViewDelegate, UIPickerViewD
             labelPlatform = UILabel()
         }
 
-        labelPlatform.textColor = UIColor.white
-        labelPlatform.font = UIFont(name: "AvenirNext-Bold", size: 24.0)
-        labelPlatform.textAlignment = .center
-        labelPlatform.text = "\(availableExits[row].capitalized)"
+        labelPlatform.textColor = UIColor.black
+        labelPlatform.font = UIFont(name: "AvenirNext-Bold", size: 36.0)
+        labelPlatform.textAlignment = .left
+        labelPlatform.text = "\(availableExits[row].rawValue.capitalized)"
 
         return labelPlatform
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedExitType = availableExits[row]
+    }
+    
     func getAvailableExits() {
         for exit in platform.exits {
-            if (!availableExits.contains(exit.type.rawValue)) {
-                availableExits.append(exit.type.rawValue)
+            if (!availableExits.contains(exit.type)) {
+                availableExits.append(exit.type)
             }
         }
+        
+        selectedExitType = availableExits[0]
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let trainViewController = segue.destination as? TrainViewController
+            else {
+                return
+        }
+        
+        trainViewController.station = station
+        trainViewController.platform = platform
+        trainViewController.exitType = selectedExitType
     }
 }

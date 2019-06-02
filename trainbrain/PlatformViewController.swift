@@ -38,6 +38,11 @@ class PlatformViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         return station.platforms.count
     }
     
+    // Change the height of the picker view row to be more inline with style
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 48.0
+    }
+    
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var labelPlatform : UILabel
         
@@ -47,16 +52,16 @@ class PlatformViewController : UIViewController, UIPickerViewDelegate, UIPickerV
             labelPlatform = UILabel()
         }
         
-        labelPlatform.textColor = UIColor.white
-        labelPlatform.font = UIFont(name: "AvenirNext-Bold", size: 24.0)
-        labelPlatform.textAlignment = .center
+        labelPlatform.textColor = UIColor.black
+        labelPlatform.font = UIFont(name: "AvenirNext-Bold", size: 36.0)
+        labelPlatform.textAlignment = .left
         labelPlatform.text = "Platform \(station.platforms[row].number)"
         
         return labelPlatform
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedPlatform = station.platforms[row];
+        selectedPlatform = station.platforms[row]
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
