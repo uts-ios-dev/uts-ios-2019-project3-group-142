@@ -15,3 +15,13 @@ extension UIColor {
     static let trainBrainPink = UIColor(red: 184.0/255.0, green: 13.0/255.0, blue: 87.0/255.0, alpha: 1.0);
     static let trainBrainPurple = UIColor(red: 112.0/255.0, green: 9.0/255.0, blue: 97.0/255.0, alpha: 1.0);
 }
+
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+    
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+}
