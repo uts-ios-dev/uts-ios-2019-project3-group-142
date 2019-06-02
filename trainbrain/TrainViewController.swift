@@ -8,8 +8,10 @@
 import UIKit
 
 class TrainViewController : UIViewController {
+    
     // UI components
     @IBOutlet weak var labelSummary : UILabel!
+    @IBOutlet weak var trainDisplay : TrainView!
     
     // Properties
     var station : Station!
@@ -21,6 +23,7 @@ class TrainViewController : UIViewController {
         super.viewDidLoad()
         
         getChosenExits()
+        trainDisplay.exits = chosenExits
         updateSummary()
     }
     
@@ -41,5 +44,9 @@ class TrainViewController : UIViewController {
         
         
         labelSummary.text = "\(exitSummary.joined(separator: " and ").capitalizingFirstLetter()) will be closest to the \(exitType.rawValue) at \(station.name)"
+    }
+    
+    @IBAction func restart(_ sender: Any) {
+        performSegue(withIdentifier: "unwindToRestart", sender: self)
     }
 }

@@ -43,6 +43,14 @@ class ViewController : UIViewController {
             btnNext.backgroundColor = UIColor.white
         }
     }
+    
     @IBAction func unwind(_ sender: UIStoryboardSegue) {}
+    
+    @IBAction func unwindToRestart(segue: UIStoryboardSegue) {
+        stationSearchField.selectedStation = nil
+        btnNext.isEnabled = false
+        btnNext.backgroundColor = UIColor.lightText
+        stationSearchField.text = ""
+    }
 }
 
