@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import CoreData
 
 class StationSearchField: UITextField, UITableViewDelegate, UITableViewDataSource {
     var dataList : [Station] = [Station]()
     var resultsList : [Station] = [Station]()
     var tableView : UITableView?
     var selectedStation : Station?
+    var container: NSPersistentContainer!
     
     override open func willMove(toWindow newWindow: UIWindow?) {
         super.willMove(toWindow: newWindow)
         tableView?.removeFromSuperview()
+        
     }
     
     override open func willMove(toSuperview newSuperview: UIView?) {

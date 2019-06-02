@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class TrainViewController : UIViewController {
     // UI components
     @IBOutlet weak var labelSummary : UILabel!
-    
+    var container: NSPersistentContainer!
     // Properties
     var station : Station!
     var platform : Platform!
@@ -42,6 +43,12 @@ class TrainViewController : UIViewController {
         
         
         labelSummary.text = "\(exitSummary.joined(separator: " and ").capitalizingFirstLetter()) will be closest to the \(exitType.rawValue) at \(station.name)"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let nextVC = segue.destination as? ViewController {
+            nextVC.container = container
+        }
     }
 }
 

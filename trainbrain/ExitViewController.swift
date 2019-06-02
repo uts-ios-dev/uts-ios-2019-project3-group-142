@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ExitViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     // UI components
@@ -17,6 +18,8 @@ class ExitViewController : UIViewController, UIPickerViewDelegate, UIPickerViewD
     var platform : Platform!
     var availableExits : [ExitType] = [ExitType]()
     var selectedExitType : ExitType!
+    var container: NSPersistentContainer!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +86,9 @@ class ExitViewController : UIViewController, UIPickerViewDelegate, UIPickerViewD
             else {
                 return
         }
-        
+        if let nextVC = segue.destination as? TrainViewController {
+            nextVC.container = container
+        }
         trainViewController.station = station
         trainViewController.platform = platform
         trainViewController.exitType = selectedExitType

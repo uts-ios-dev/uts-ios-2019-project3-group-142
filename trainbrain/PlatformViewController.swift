@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PlatformViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     // UI components
@@ -15,6 +16,7 @@ class PlatformViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     // Properties
     var station : Station!
     var selectedPlatform : Platform?
+    var container: NSPersistentContainer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +71,9 @@ class PlatformViewController : UIViewController, UIPickerViewDelegate, UIPickerV
             else {
                 return
             }
-        
+        if let nextVC = segue.destination as? ExitViewController {
+            nextVC.container = container
+        }
         exitViewController.station = station
         exitViewController.platform = selectedPlatform
     }
