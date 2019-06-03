@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Sets the translucent background color
         // Set translucent. (Default value is already true, so this can be removed if desired.)
         UINavigationBar.appearance().isTranslucent = true
+        // Set the font for the UIBarButtons to be inline with app style
+        let customFont = UIFont(name: "AvenirNext-Bold", size: 18.0)!
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .normal)
         
         return true
     }

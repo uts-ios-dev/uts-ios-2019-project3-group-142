@@ -5,14 +5,14 @@
 //  Created by Imogen Thomson on 28/5/19.
 //  Copyright © 2019 Sidney Cremer. All rights reserved.
 //
-
 import UIKit
-import CoreData
 
 class TrainViewController : UIViewController {
+    
     // UI components
     @IBOutlet weak var labelSummary : UILabel!
-    var container: NSPersistentContainer!
+    @IBOutlet weak var trainDisplay : TrainView!
+    
     // Properties
     var station : Station!
     var platform : Platform!
@@ -23,6 +23,7 @@ class TrainViewController : UIViewController {
         super.viewDidLoad()
         
         getChosenExits()
+        trainDisplay.exits = chosenExits
         updateSummary()
     }
     
@@ -45,19 +46,7 @@ class TrainViewController : UIViewController {
         labelSummary.text = "\(exitSummary.joined(separator: " and ").capitalizingFirstLetter()) will be closest to the \(exitType.rawValue) at \(station.name)"
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let nextVC = segue.destination as? ViewController {
-            nextVC.container = container
-        }
-    }
-}
-
-extension String {
-    func capitalizingFirstLetter() -> String {
-        return prefix(1).capitalized + dropFirst()
-    }
-    
-    mutating func capitalizeFirstLetter() {
-        self = self.capitalizingFirstLetter()
+    @IBAction func restart(_ sender: Any) {
+        performSegue(withIdentifier: "unwindToRestart", sender: self)
     }
 }

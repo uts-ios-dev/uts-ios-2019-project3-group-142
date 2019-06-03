@@ -18,8 +18,6 @@ class ExitViewController : UIViewController, UIPickerViewDelegate, UIPickerViewD
     var platform : Platform!
     var availableExits : [ExitType] = [ExitType]()
     var selectedExitType : ExitType!
-    var container: NSPersistentContainer!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +36,11 @@ class ExitViewController : UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
+    }
+    
+    // Change the height of the picker view row to be more inline with style
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 48.0
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -77,7 +80,6 @@ class ExitViewController : UIViewController, UIPickerViewDelegate, UIPickerViewD
             }
         }
         
-        // Set the default selection
         selectedExitType = availableExits[0]
     }
     
@@ -86,9 +88,7 @@ class ExitViewController : UIViewController, UIPickerViewDelegate, UIPickerViewD
             else {
                 return
         }
-        if let nextVC = segue.destination as? TrainViewController {
-            nextVC.container = container
-        }
+        
         trainViewController.station = station
         trainViewController.platform = platform
         trainViewController.exitType = selectedExitType

@@ -73,6 +73,7 @@ class StationSearchField: UITextField, UITableViewDelegate, UITableViewDataSourc
             
             tableView.layer.masksToBounds = true
             tableView.separatorInset = UIEdgeInsets.zero
+            tableView.separatorColor = UIColor.clear
             tableView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
             
             if self.isFirstResponder {
@@ -176,6 +177,10 @@ class StationSearchField: UITextField, UITableViewDelegate, UITableViewDataSourc
         return resultsList.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 48.0
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StationSearchFieldCell", for: indexPath) as UITableViewCell
         cell.backgroundColor = UIColor.clear
@@ -212,6 +217,7 @@ class StationSearchField: UITextField, UITableViewDelegate, UITableViewDataSourc
     }
     
     @objc open func textFieldDidChange(){
+        selectedStation = nil
         filter()
         updateSearchTableView()
         tableView?.isHidden = false
