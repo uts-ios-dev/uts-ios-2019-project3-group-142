@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class StationSearchField: UITextField, UITableViewDelegate, UITableViewDataSource {
     var dataList : [Station] = [Station]()
@@ -43,7 +44,7 @@ class StationSearchField: UITextField, UITableViewDelegate, UITableViewDataSourc
             self.window?.addSubview(tableView)
         } else {
             // Create the tableView
-            addData()
+            getData()
             tableView = UITableView(frame: CGRect.zero)
         }
         
@@ -81,88 +82,35 @@ class StationSearchField: UITextField, UITableViewDelegate, UITableViewDataSourc
         }
     }
     
-    func addData() {
-        // TODO: Move and read from file
-        dataList.append(
-            Station(name: "Rockdale", platforms: [
-                Platform(number: 2, exits: [
-                    Exit(type: .stairs, carriageNumber: 5, doorNumber: 2),
-                    Exit(type: .elevator, carriageNumber: 7, doorNumber: 1)
-                ]),
-                Platform(number: 3, exits: [
-                    Exit(type: .stairs, carriageNumber: 3, doorNumber: 2),
-                    Exit(type: .elevator, carriageNumber: 2, doorNumber: 2)
-                ]),
-                Platform(number: 4, exits: [
-                    Exit(type: .stairs, carriageNumber: 5, doorNumber: 2),
-                    Exit(type: .elevator, carriageNumber: 7, doorNumber: 1)
-                ]),
-                Platform(number: 5, exits: [
-                    Exit(type: .stairs, carriageNumber: 3, doorNumber: 2),
-                    Exit(type: .elevator, carriageNumber: 2, doorNumber: 2)
-                ])
-            ])
-        )
+    func getData() {
+        let db = Database.database().reference().child("stations")
         
-        dataList.append(
-            Station(name: "Kogarah", platforms: [
-                Platform(number: 1, exits: [
-                    Exit(type: .stairs, carriageNumber: 8, doorNumber: 2),
-                    Exit(type: .elevator, carriageNumber: 8, doorNumber: 2)
-                ]),
-                Platform(number: 2, exits: [
-                    Exit(type: .stairs, carriageNumber: 2, doorNumber: 1),
-                    Exit(type: .elevator, carriageNumber: 1, doorNumber: 1)
-                ]),
-                Platform(number: 3, exits: [
-                    Exit(type: .stairs, carriageNumber: 7, doorNumber: 2),
-                    Exit(type: .elevator, carriageNumber: 8, doorNumber: 2)
-                ]),
-                Platform(number: 4, exits: [
-                    Exit(type: .stairs, carriageNumber: 1, doorNumber: 2),
-                    Exit(type: .elevator, carriageNumber: 1, doorNumber: 1)
-                ])
-            ])
-        )
-        
-        dataList.append(
-            Station(name: "Banksia", platforms: [
-                Platform(number: 1, exits: [
-                    Exit(type: .stairs, carriageNumber: 3, doorNumber: 1)
-                ]),
-                Platform(number: 2, exits: [
-                    Exit(type: .stairs, carriageNumber: 5, doorNumber: 2)
-                ]),
-                Platform(number: 3, exits: [
-                    Exit(type: .stairs, carriageNumber: 3, doorNumber: 1)
-                ]),
-                Platform(number: 4, exits: [
-                    Exit(type: .stairs, carriageNumber: 5, doorNumber: 2)
-                ])
-            ])
-        )
-        dataList.append(
-            Station(name: "Summer Hill", platforms: [
-                Platform(number: 1, exits: [
-                    Exit(type: .stairs, carriageNumber: 1, doorNumber: 2)
-                    ]),
-                Platform(number: 2, exits: [
-                    Exit(type: .stairs, carriageNumber: 8, doorNumber: 2)
-                    ])
-                ])
-        )
-        dataList.append(
-            Station(name: "Newtown", platforms: [
-                Platform(number: 1, exits: [
-                    Exit(type: .stairs, carriageNumber: 3, doorNumber: 1),
-                    Exit(type: .elevator, carriageNumber: 4, doorNumber: 1)
-                    ]),
-                Platform(number: 2, exits: [
-                    Exit(type: .stairs, carriageNumber: 4, doorNumber: 1),
-                    Exit(type: .elevator, carriageNumber: 3, doorNumber: 1)
-                    ])
-                ])
-        )
+        db.observeSingleEvent(of: .value, with: { stationsSnapshot in
+            for station in stationsSnapshot.children {
+                let stationSnapshot = station as! DataSnapshot
+                // Create platforms array for station
+                var platformList = [Platform]()
+                // Get this station's platforms
+                for platform in stationSnapshot.childSnapshot(forPath: "platforms").children {
+                    let platformSnapshot = platform as! DataSnapshot
+                    // Create exits array for platform
+                    var exitList = [Exit]()
+                    // Get this platform's exits
+                    for exit in platformSnapshot.childSnapshot(forPath: "exits").children {
+                        let exitSnapshot = exit as! DataSnapshot
+                        
+                        if let exitValue = exitSnapshot.value as? [String: Any] {
+                            // Create the exit object
+                            exitList.append(Exit(type: ExitType(rawValue: exitValue["type"] as! String)!, carriageNumber: exitValue["carriage"] as! Int, doorNumber: exitValue["door"] as! Int))
+                        }
+                    }
+                    // Create the platform object
+                    platformList.append(Platform(number: Int(platformSnapshot.key)!, exits: exitList))
+                }
+                // Create station object
+                self.dataList.append(Station(name: stationSnapshot.key, platforms: platformList))
+            }
+        })
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

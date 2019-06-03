@@ -14,7 +14,6 @@ class TrainView : UIView {
     
     override func draw(_ rect: CGRect) {
         generateTrainArray()
-        print(train)
         
         let offset = 8
         var position = 1
@@ -129,7 +128,6 @@ class TrainView : UIView {
         }
         
         for exit in exits {
-            print(exit)
             train[exit.carriageNumber - 1][exit.doorNumber - 1] = true
         }
     }

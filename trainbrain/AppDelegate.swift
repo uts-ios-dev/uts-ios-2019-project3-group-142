@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Set the font for the UIBarButtons to be inline with app style
         let customFont = UIFont(name: "AvenirNext-Bold", size: 18.0)!
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .normal)
+        // Set up Firebase
+        FirebaseApp.configure()
         
         return true
     }
