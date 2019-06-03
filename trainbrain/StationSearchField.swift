@@ -44,7 +44,9 @@ class StationSearchField: UITextField, UITableViewDelegate, UITableViewDataSourc
             self.window?.addSubview(tableView)
         } else {
             // Create the tableView
-            getData()
+            if dataList.isEmpty {
+                getData()
+            }
             tableView = UITableView(frame: CGRect.zero)
         }
         
