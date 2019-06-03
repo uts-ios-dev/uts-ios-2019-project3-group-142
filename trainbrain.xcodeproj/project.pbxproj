@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,8 +16,6 @@
 		044F206622A405AE0014B52C /* TrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F206522A405AE0014B52C /* TrainView.swift */; };
 		04922382229B8FAB00D3CBA6 /* PlatformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04922381229B8FAB00D3CBA6 /* PlatformViewController.swift */; };
 		04922384229BA00600D3CBA6 /* ExitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04922383229BA00600D3CBA6 /* ExitViewController.swift */; };
-		04A21FBA22A506A3002AF29D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04A21FB922A506A3002AF29D /* GoogleService-Info.plist */; };
-		70EB960C9784C473541E271A /* Pods_trainbrain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 248C08ECA3A1BEE409412C80 /* Pods_trainbrain.framework */; };
 		FC50D02122897CC5006E6BC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC50D02022897CC5006E6BC8 /* AppDelegate.swift */; };
 		FC50D02322897CC5006E6BC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC50D02222897CC5006E6BC8 /* ViewController.swift */; };
 		FC50D02622897CC5006E6BC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC50D02422897CC5006E6BC8 /* Main.storyboard */; };
@@ -35,10 +33,6 @@
 		044F206522A405AE0014B52C /* TrainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainView.swift; sourceTree = "<group>"; };
 		04922381229B8FAB00D3CBA6 /* PlatformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformViewController.swift; sourceTree = "<group>"; };
 		04922383229BA00600D3CBA6 /* ExitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitViewController.swift; sourceTree = "<group>"; };
-		04A21FB922A506A3002AF29D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		248C08ECA3A1BEE409412C80 /* Pods_trainbrain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trainbrain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FEA1C2252FE2E359E3B0204 /* Pods-trainbrain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trainbrain.release.xcconfig"; path = "Target Support Files/Pods-trainbrain/Pods-trainbrain.release.xcconfig"; sourceTree = "<group>"; };
-		D230655ACAD22E870E453D25 /* Pods-trainbrain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trainbrain.debug.xcconfig"; path = "Target Support Files/Pods-trainbrain/Pods-trainbrain.debug.xcconfig"; sourceTree = "<group>"; };
 		FC50D01D22897CC5006E6BC8 /* trainbrain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trainbrain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC50D02022897CC5006E6BC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC50D02222897CC5006E6BC8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,37 +47,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70EB960C9784C473541E271A /* Pods_trainbrain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		326C25BFC79C3B623499EFAA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				248C08ECA3A1BEE409412C80 /* Pods_trainbrain.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		611E984BD511072876F3A374 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D230655ACAD22E870E453D25 /* Pods-trainbrain.debug.xcconfig */,
-				5FEA1C2252FE2E359E3B0204 /* Pods-trainbrain.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		FC50D01422897CC5006E6BC8 = {
 			isa = PBXGroup;
 			children = (
 				FC50D01F22897CC5006E6BC8 /* trainbrain */,
 				FC50D01E22897CC5006E6BC8 /* Products */,
-				611E984BD511072876F3A374 /* Pods */,
-				326C25BFC79C3B623499EFAA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,7 +72,6 @@
 		FC50D01F22897CC5006E6BC8 /* trainbrain */ = {
 			isa = PBXGroup;
 			children = (
-				04A21FB922A506A3002AF29D /* GoogleService-Info.plist */,
 				FC50D02022897CC5006E6BC8 /* AppDelegate.swift */,
 				FC50D02222897CC5006E6BC8 /* ViewController.swift */,
 				FC50D02422897CC5006E6BC8 /* Main.storyboard */,
@@ -125,11 +98,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC50D02F22897CC7006E6BC8 /* Build configuration list for PBXNativeTarget "trainbrain" */;
 			buildPhases = (
-				6ADAC8ED775371F78219AC36 /* [CP] Check Pods Manifest.lock */,
 				FC50D01922897CC5006E6BC8 /* Sources */,
 				FC50D01A22897CC5006E6BC8 /* Frameworks */,
 				FC50D01B22897CC5006E6BC8 /* Resources */,
-				99B61D6C09BCBECA07A1746E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,55 +151,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC50D02B22897CC7006E6BC8 /* LaunchScreen.storyboard in Resources */,
-				04A21FBA22A506A3002AF29D /* GoogleService-Info.plist in Resources */,
 				FC50D02822897CC7006E6BC8 /* Assets.xcassets in Resources */,
 				FC50D02622897CC5006E6BC8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		6ADAC8ED775371F78219AC36 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-trainbrain-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		99B61D6C09BCBECA07A1746E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-trainbrain/Pods-trainbrain-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-trainbrain/Pods-trainbrain-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-trainbrain/Pods-trainbrain-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FC50D01922897CC5006E6BC8 /* Sources */ = {
@@ -322,14 +250,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -378,20 +305,18 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		FC50D03022897CC7006E6BC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D230655ACAD22E870E453D25 /* Pods-trainbrain.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -404,14 +329,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = 142.trainbrain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		FC50D03122897CC7006E6BC8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5FEA1C2252FE2E359E3B0204 /* Pods-trainbrain.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -424,7 +348,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = 142.trainbrain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
