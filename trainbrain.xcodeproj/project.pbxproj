@@ -21,6 +21,7 @@
 		FC50D02622897CC5006E6BC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC50D02422897CC5006E6BC8 /* Main.storyboard */; };
 		FC50D02822897CC7006E6BC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC50D02722897CC7006E6BC8 /* Assets.xcassets */; };
 		FC50D02B22897CC7006E6BC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC50D02922897CC7006E6BC8 /* LaunchScreen.storyboard */; };
+		FCA0FF3622A4F0890040E575 /* StationDB.db.sql in Resources */ = {isa = PBXBuildFile; fileRef = FCA0FF3522A4F0890040E575 /* StationDB.db.sql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		FC50D02722897CC7006E6BC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC50D02A22897CC7006E6BC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC50D02C22897CC7006E6BC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCA0FF3522A4F0890040E575 /* StationDB.db.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StationDB.db.sql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				04922383229BA00600D3CBA6 /* ExitViewController.swift */,
 				04044A2822A3EB6800207391 /* TrainViewController.swift */,
 				044F206522A405AE0014B52C /* TrainView.swift */,
+				FCA0FF3522A4F0890040E575 /* StationDB.db.sql */,
 			);
 			path = trainbrain;
 			sourceTree = "<group>";
@@ -123,6 +126,7 @@
 				TargetAttributes = {
 					FC50D01C22897CC5006E6BC8 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -151,6 +155,7 @@
 			files = (
 				FC50D02B22897CC7006E6BC8 /* LaunchScreen.storyboard in Resources */,
 				FC50D02822897CC7006E6BC8 /* Assets.xcassets in Resources */,
+				FCA0FF3622A4F0890040E575 /* StationDB.db.sql in Resources */,
 				FC50D02622897CC5006E6BC8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,7 +333,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = 142.trainbrain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -347,7 +352,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = 142.trainbrain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
