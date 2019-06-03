@@ -27,7 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .normal)
         // Set up Firebase
         FirebaseApp.configure()
-        
+        // Enable persistence for offline
+        Database.database().isPersistenceEnabled = true
         return true
     }
 
